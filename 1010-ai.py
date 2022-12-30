@@ -12,14 +12,7 @@ def main(args):
         prefix_chars="--",
     )
     p_args = parser.parse_args(args)
-    game = Game()
-    while True:
-        print(game.get_score(), "\n", game)
-        hand = game.get_hand()
-        for h in hand:
-            print(h)
-        inp = input("p, x, y: ").split(" ")
-        game.play_piece(int(inp[1]), int(inp[2]), hand[int(inp[0])])
+    game = Game(dim=10)
 
 
 if __name__ == "__main__":
